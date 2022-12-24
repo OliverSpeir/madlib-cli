@@ -75,7 +75,7 @@ def save_completed(x):
     :param x: comes from merge function
     :return: file in /assets
     """
-    with open('../completed_madlib.txt', 'w') as f:
+    with open('../assets/completed_madlib.txt', 'w') as f:
         f.write(x)
 
 
@@ -83,7 +83,7 @@ def main():
     welcome()
     file_path = input("> Enter a valid filepath to the madlib template ")
     if file_path == "":
-        file_path = "assets/madlib.txt"
+        file_path = "../assets/madlib.txt"
     base_template, words_to_add = parse_template(read_template(file_path))
     completed = merge(base_template, prompt_user(words_to_add))
     save_completed(completed)
